@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="images/favicon">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/faviconapple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Semicolon Initiative</title>
+  <style>
+    html,
+    body {
+      font-family: 'Montserrat', sans-serif;
+      /* font-family: 'Open Sans', sans-serif; */
+    }
+
+    .nav-link {
+      color: white !important;
+    }
+
+    .enroll {
+      float: right;
+      position: relative;
+      top: 100px;
+      right: 50px;
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    #about {
+      height: 400px;
+    }
+
+    .varun {
+      margin-top: 50px;
+      border-radius: 50%;
+    }
+
+    .about-text {
+      margin-top: 50px;
+    }
+
+    .about-text p {
+      font-size: 18px;
+    }
+
+    #courses {
+      height: 400px;
+      color: white;
+    }
+
+    .carousel-item {
+      margin-top: 25px;
+      height: 350px !important;
+    }
+
+    .courses-text {
+      margin-top: 100px;
+    }
+
+    .courses-text p {
+      font-size: 18px;
+    }
+
+    #results {
+      height: 400px;
+    }
+
+    #footer {
+      color: white;
+      font-size: 12px;
+      box-shadow: 00px 0px 40px #2d2d2d;
+
+    }
+
+    .contact a {
+      color: white !important;
+      text-decoration: none;
+    }
+
+    .navbar {
+      box-shadow: 00px 0px 40px #2d2d2d;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    #letscode {
+      -webkit-animation: onLoad 2s cubic-bezier(0.4, 0.02, 0.57, 0.82);
+      animation: onLoad 2s cubic-bezier(0.4, 0.02, 0.57, 0.82);
+    }
+
+    @-webkit-keyframes onLoad {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes onLoad {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    #starting {
+      -webkit-animation: onLoad 2s cubic-bezier(0.4, 0.02, 0.57, 0.82);
+      animation: onLoad 2s cubic-bezier(0.4, 0.02, 0.57, 0.82);
+      animation-delay: 1s;
+      animation-fill-mode: both;
+    }
+
+    #enrollbtn {
+      -webkit-animation: onLoad 2s cubic-bezier(0.4, 0.02, 0.57, 0.82);
+      animation: onLoad 2s cubic-bezier(0.4, 0.02, 0.57, 0.82);
+      animation-delay: 2s;
+      animation-fill-mode: both;
+      ;
+
+    }
+
+
+
+    .check {
+      display: none;
+    }
+
+
+
+    .bar.middle {
+      top: 12px;
+      opacity: 1;
+    }
+
+    .bar.bottom {
+      top: 24px;
+      -webkit-transform-origin: left bottom;
+      transform-origin: left bottom;
+    }
+
+
+    .bg-darker {
+      background-color: #222;
+    }
+
+
+    /* Hover Effects */
+
+    .menu-btn:hover .bar {
+      background: white;
+    }
+
+    .menu-btn:hover .menu-btn__text {
+      color: #999;
+    }
+
+    .close-menu {
+      position: fixed;
+      top: 0;
+      right: 300px;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0);
+      transition-property: all;
+      transition-duration: .3s;
+      transition-delay: 0s;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+
+    /* checked */
+
+    .check:checked~.drawer-menu {
+      transition-delay: .3s;
+      -webkit-transform: none;
+      transform: none;
+      opacity: 1;
+      z-index: 2;
+
+    }
+
+    .check:checked~.contents {
+      transition-delay: 0s;
+      -webkit-transform: translateX(-300px);
+      transform: translateX(-300px);
+    }
+
+    .check:checked~.menu-btn .menu-btn__text {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .check:checked~.menu-btn .bar.top {
+      width: 56px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .check:checked~.menu-btn .bar.middle {
+      opacity: 0;
+    }
+
+    .check:checked~.menu-btn .bar.bottom {
+      width: 56px;
+      top: 40px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+    .check:checked~.close-menu {
+      transition-duration: 1s;
+      transition-delay: .3s;
+      background: rgba(0, 0, 0, .5);
+      visibility: visible;
+      opacity: 1;
+      z-index: 3;
+    }
+
+
+    .drawer-menu {
+      box-sizing: border-box;
+      position: fixed;
+      /* visibility: hidden; */
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100%;
+      padding: 120px 0;
+      background: #222;
+      transition-property: all;
+      transition-duration: .5s;
+      transition-delay: 0s;
+      -webkit-transform-origin: right center;
+      transform-origin: right center;
+      -webkit-transform: perspective(500px) rotateY(-90deg);
+      transform: perspective(500px) rotateY(-90deg);
+      opacity: 0;
+      box-shadow: 0px 0px 5px #1E1E1E;
+    }
+
+    .drawer-menu li {
+      text-align: center;
+    }
+
+    .drawer-menu li a {
+      display: block;
+      height: 50px;
+      line-height: 50px;
+      font-size: 14px;
+      color: #fff;
+      transition: all .8s;
+      /* visibility: hidden  ; */
+    }
+
+    .drawer-menu li a:hover {
+      color: #1a1e24;
+      background: #96908D;
+    }
+
+
+
+    .menu-btn {
+      position: fixed;
+      display: block;
+      top: 28px;
+      right: 5%;
+
+      display: block;
+      width: 40px;
+      height: 40px;
+      font-size: 10px;
+      text-align: center;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: white;
+      transition: all .5s;
+      -webkit-transform-origin: left top;
+      transform-origin: left top;
+    }
+
+
+    .menu-btn__text {
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      color: #fff;
+      transition: all .5s;
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    #logo {
+      top: 35%;
+      max-width: 50%;
+      margin: 0 25%;
+      position: absolute;
+      display: block;
+      z-index: 1;
+      -webkit-animation: onLoad 1s cubic-bezier(0.4, 0.02, 0.57, 0.82);
+      animation: onLoad 1s cubic-bezier(0.4, 0.02, 0.57, 0.82);
+    }
+
+    @-webkit-keyframes onLoad {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes onLoad {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+
+    .box {
+
+      position: relative;
+      transition: all .2s ease-out 0s;
+      margin-top: 20px;
+    }
+
+    .box .box-content,
+    .box:after {
+      position: absolute;
+      left: 20px;
+      right: 20px
+    }
+
+    .box:after {
+      border-radius: 50%;
+
+      content: "";
+      display: block;
+      background: #333;
+      top: 20px;
+      bottom: 20px;
+      opacity: 0;
+      transform: rotate3d(-1, 1, 0, 100deg);
+      transition: all .4s ease-in-out 0s
+    }
+
+    .box:hover:after {
+      opacity: .9;
+      transform: rotate3d(0, 0, 0, 0deg)
+    }
+
+    .box img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+
+    .box .box-content {
+      text-align: center;
+      top: 45%;
+      opacity: 0;
+      z-index: 1;
+      -webkit-transform: translate(10%, -30%);
+      transform: translate(10%, -30%);
+      transition: all .2s ease-out 0s
+    }
+
+    .box:hover .box-content {
+      opacity: 1;
+      transform: translate(0, -50%);
+      transition-delay: .2s
+    }
+
+    .box .title {
+      display: block;
+      font-size: 17px;
+      font-weight: 700;
+      /* color: #39b54a; */
+      color: cornsilk;
+      /* margin: 0 0 20px; */
+      margin-top: 20px;
+      margin-bottom: 25px;
+    }
+
+    .box .post {
+      display: block;
+      font-size: 15px;
+      color: #f7f7b9;
+      margin-bottom: 5px
+    }
+
+    .sub-container {
+  position: relative;
+  width: 130%;
+}
+
+.sub-image {
+  display: block;
+  width: 100%;
+  height: auto;
+	margin-top: 20px;
+  border-radius: 5px;
+}
+
+.sub-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #222222;
+  overflow: hidden;
+  width: 100%;
+  
+  height: 0;
+  transition: .5s ease;
+}
+
+.sub-container:hover .sub-overlay {
+  height: 50%;
+}
+
+.sub-text {
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar component -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #222">
+    <a class="navbar-brand" href="#"><img src="images/logo1.png" style="height:50px;"></a>
+
+
+    <!-- fromhere -->
+
+    <input type="checkbox" class="check" id="checked">
+    <label class="menu-btn" for="checked">
+      <span class="bar top"></span>
+      <span class="bar middle"></span>
+      <span class="bar bottom"></span>
+      <span class="menu-btn__text"></span>
+    </label>
+    <label class="close-menu" for="checked"></label>
+
+    <nav class="drawer-menu" id="try">
+
+      <ul class="band " style="margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;list-style-type:none">
+
+        <li><a href="#about-section" style="font-size: large" onclick="hatao()">ABOUT</a></inpu<a>
+        </li>
+        <li><a href="#courses-section" style="font-size: large" onclick="hatao()">COURSES</a></li>
+        <li><a href="#internships-section" style="font-size: large" onclick="hatao()">INTERNSHIPS</a></li>
+        <li><a href="#team-section" style="font-size: large" onclick="hatao()">TEAM</a></li>
+        <li><a href="#top" style="font-size: large" onclick="hatao()">TOP</a></li>
+
+      </ul>
+    </nav>
+
+
+  </nav>
+  <div class="container"></div>
+
+  <!-- Header -->
+  <section id="top"
+    style="background-image: url('images/main.jpg'); height: 500px; width: auto;max-height:500px;background-repeat: no-repeat;background-size: cover;">
+    <section class="h-100">
+      <div class="container h-100">
+        <div class="d-flex align-items-center justify-content-center h-100">
+          <div class="d-flex flex-column">
+            <img id="letscode" class="align-items-center" src="images/code.png" style="height: 20vh;"> <br>
+            <span id="starting" class="badge badge-pill badge-light align-self-center p-3"
+              style="font-size: 0.8em">Classes Starting from 7<sup>th</sup>
+              September</span>
+
+            <button
+              onClick=" window.open('https://docs.google.com/forms/d/e/1FAIpQLScMH9YwTvXn4nNOZ6szTtc-5GmdH7tniefVNNUdKPur5ZdaWg/viewform?usp=sf_link','_blank')"
+              id="enrollbtn" class="btn btn-success align-self-center p-2" type="button" name="button"
+              style="margin-top: 20px">
+              Enroll!</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+
+
+  <!-- About -->
+
+  <section id="about-section" class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="mt-3 text-center mb-5 ">About</h1>
+      <p class="lead text-center mb-4">
+        We founded Semicolon after noticing the gap that exists between what is taught to us, specifically in our
+        colleges, and what is required from us in the industry as developers. We firmly believe in the fast moving pace
+        of our Tech Industry and acknowledge the fact that it takes young creative minds to make an impact on the same.
+        All we want to do, is to make Full Stack Development more accessible to students, with interactive courses we
+        have developed ourselves.
+      </p>
+    </div>
+  </section>
+
+  <!-- Courses Offerred -->
+
+
+  <section id="courses-section">
+    <div class="container pt-5 pb-5">
+      <h1 class=" text-center mb-5 ">Courses Offered</h1>
+      <p class="lead text-center mb-5">
+        The whole premise of Full Stack Development is set on the idea that a developer who can proficiently build all
+        fronts of an Application, Web or ortherwise, has a reduced need of dependency on specialized fronts. Therefore,
+        we at Semicolon offer a wide variety of courses that aim at making a programmer handle all kinds of work in our
+        Industry.
+      </p>
+
+
+      <div class="container-fluid" style="width: 40%;">
+          <div class="row p-3 ">
+            <div class="col-md-9">
+              <div class="row mb-1">
+                <div class="col-md-4">
+                    <div class="sub-container">
+                        <img src="images/subjects/html.jpg" alt="HTML" class="sub-image">
+                        <div class="sub-overlay">
+                          <div class="sub-text">HTML</div>
+                        </div>
+                      </div>
+                      
+                </div>
+                <div class="col-md-4">
+                    <div class="sub-container">
+                        <img src="images/subjects/css.jpg" alt="CSS" class="sub-image">
+                        <div class="sub-overlay">
+                          <div class="sub-text">CSS</div>
+                        </div>
+                      </div>
+                      
+                </div>
+                <div class="col-md-4">
+                    <div class="sub-container">
+                        <img src="images/subjects/javascript.jpg" alt="Javascript" class="sub-image">
+                        <div class="sub-overlay">
+                          <div class="sub-text">Javascript</div>
+                        </div>
+                      </div>
+                      
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                    <div class="sub-container">
+                        <img src="images/subjects/bootstrap.jpg" alt="Bootstrap" class="sub-image">
+                        <div class="sub-overlay">
+                          <div class="sub-text">Bootstrap</div>
+                        </div>
+                      </div>
+                      
+                </div>
+                <div class="col-md-4">
+                    <div class="sub-container">
+                        <img src="images/subjects/angular.jpg" alt="Angular" class="sub-image">
+                        <div class="sub-overlay">
+                          <div class="sub-text">Angular</div>
+                        </div>
+                      </div>
+                      
+                </div>
+                <div class="col-md-4">
+                    <div class="sub-container">
+                        <img src="images/subjects/sql.jpg" alt="SQL" class="sub-image">
+                        <div class="sub-overlay">
+                          <div class="sub-text">SQL</div>
+                        </div>
+                      </div>
+                      
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" >
+                <div class="sub-container">
+                    <img src="images/subjects/pythondlask.jpg" alt="Flask" class="sub-image" style="width:100px;height:214px">
+                    <div class="sub-overlay" style="width: 100px;">
+                      <div class="sub-text">Flask</div>
+                    </div>
+                  </div>
+                  
+            </div>
+          </div>
+        </div>
+
+
+      
+     
+
+    </div>
+  </section>
+
+
+  <!-- Internships -->
+  <section id="internships-section" class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="mt-3 text-center mb-5 ">Internships</h1>
+      <p class="lead text-center mb-4">
+        We founded Semicolon after noticing the gap that exists between what is taught to us, specifically in our
+        colleges, and what is required from us in the industry as developers. We firmly believe in the fast moving pace
+        of our Tech Industry and acknowledge the fact that it takes young creative minds to make an impact on the same.
+        All we want to do, is to make Full Stack Development more accessable to students, with interactive courses we
+        have developed ourselves.
+      </p>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team-section">
+    <div class="container pt-5 pb-5">
+      <h1 class=" text-center mb-5 ">The Team</h1>
+      <div class="container my-5 pt-5">
+        <div class="row mt-30 justify-content-center">
+          <div class="col-md-3 col-sm-5  ">
+            <div class="box mb-sm-5">
+              <img src="images/aniket.jpeg">
+              <div class="box-content">
+                <h3 class="title">Aniket Kalgutkar</h3>
+                <!-- <span class="post">Co-Founder</span> -->
+                <span class="post">Google</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-5 ">
+            <div class="box">
+              <img src="images/Sai.jpg">
+              <div class="box-content">
+                <h3 class="title">Sai Narayan</h3>
+                <!-- <span class="post">Co-Founder</span> -->
+                <span class="post">Infosys</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-5">
+            <div class="box">
+              <img src="images/utkarsh.jpg">
+              <div class="box-content">
+                <h3 class="title">Utkarsh Mehta</h3>
+                <span class="post">LTI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+
+  <footer id="footer" class="bg-darker pt-4 pb-3">
+
+    <div style="background-color:#222222">
+      <!-- <h5 class=" text-center mt-4 mb-5 "> SEMICOLON INITIATIVE  </h5> -->
+      <div class="text-center mb-4">
+        <img src="images/logo1.png" style="height:55px;">
+        <hr color="white" width="100px">
+      </div>
+
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm text-center">
+          <div class="col  ">
+            <div class="col-sm text-center mb-3">
+              <h5>
+                <b>
+                  Contact Us
+                  <hr color="white" width="20px">
+                </b>
+              </h5>
+            </div>
+            <div class="col-sm text-center mb-2">
+              <h6>
+                9820656523
+              </h6>
+            </div>
+            <div class="col-sm text-center mb-2">
+              <h6>
+                8879761031
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-center">
+          <div class="col ">
+            <div class="col-sm text-center mb-3">
+              <h5>
+                <b>
+                  Address
+                  <hr color="white" width="20px">
+                </b>
+              </h5>
+            </div>
+            <div class="col-sm text-center mb-2">
+              <h6>
+                Malad
+              </h6>
+            </div>
+            <!-- <div class="col-sm text-center ,b-2">
+                <h6>
+                  8879761031
+                </h6>
+              </div> -->
+          </div>
+        </div>
+        <div class="col-sm text-center">
+          <div class="col">
+            <div class="col-sm text-center mb-3">
+              <h5>
+                <b>
+                  E-mail
+                  <hr color="white" width="20px">
+                </b>
+              </h5>
+            </div>
+            <div class="col-sm text-center mb-2">
+              <h6>
+                semicoloninitiative@gmail.com
+              </h6>
+            </div>
+            <div class="col-sm text-center mb-2">
+              <h6>
+                pk.aniket@gmail.com
+              </h6>
+            </div>
+            <div class="col-sm text-center mb-2">
+              <h6>
+                rsnarain@gmail.com
+              </h6>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    function hatao() {
+      document.getElementById("checked").checked = false;
+    }
+
+
+  </script>
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
